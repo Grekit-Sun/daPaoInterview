@@ -1,10 +1,12 @@
 package com.yifan.dapaointerview.base;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -21,6 +23,7 @@ import com.yifan.dapaointerview.databinding.ViewLoadErrorBinding;
 import com.yifan.dapaointerview.databinding.ViewLoadingBinding;
 import com.yifan.dapaointerview.databinding.ViewNoDataBinding;
 import com.yifan.dapaointerview.databinding.ViewNoNetworkBinding;
+import com.yifan.dapaointerview.helper.WeakHandlerHelper;
 
 /**
  * @Description:
@@ -42,6 +45,8 @@ public abstract class BaseActivity<DB extends ViewDataBinding, VM extends BaseVi
     private ViewNoNetworkBinding mViewNoNetworkBinding;
 
     private ViewNoDataBinding mViewNoDataBinding;
+
+    protected WeakHandlerHelper mHandler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,6 +72,8 @@ public abstract class BaseActivity<DB extends ViewDataBinding, VM extends BaseVi
         if (mViewModel != null) {
             getLifecycle().addObserver(mViewModel);
         }
+
+        setFitsSystemWindows(this,false);
     }
 
     private void initLoadState() {
@@ -184,5 +191,31 @@ public abstract class BaseActivity<DB extends ViewDataBinding, VM extends BaseVi
         if (childCount > 1) {
             mActivityBaseBinding.flContentContainer.removeViews(1, childCount - 1);
         }
+    }
+
+    /**
+     * 设置页面最外层布局 FitsSystemWindows 属性
+     * @param activity
+     * @param value
+     */
+    public static void setFitsSystemWindows(Activity activity, boolean value) {
+        ViewGroup contentFrameLayout = (ViewGroup) activity.findViewById(android.R.id.content);
+        View parentView = contentFrameLayout.getChildAt(0);
+        if (parentView != null && Build.VERSION.SDK_INT >= 14) {
+            parentView.setFitsSystemWindows(value);
+        }
+    }
+
+    /**
+     * 延时处理
+     *
+     * @param runnable
+     * @param delayMillis
+     */
+    public void handleEventDelay(Runnable runnable, long delayMillis) {
+        if (mHandler == null) {
+            mHandler = new WeakHandlerHelper();
+        }
+        mHandler.postDelayed(runnable, delayMillis);
     }
 }

@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">DapaoInterview</string>
+    <string name="app_name">逸帆面面</string>
 
+    <string name="app_slogan">面试如此简单</string>
     <!--加载-->
     <string name="loading">加载中&#8230;</string>
     <string name="load_error">加载出错</string>
