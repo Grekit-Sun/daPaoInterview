@@ -8,17 +8,16 @@ import com.google.android.material.tabs.TabLayout;
 import com.yifan.dapaointerview.R;
 import com.yifan.dapaointerview.adpter.MyFragmentStateAdapter;
 import com.yifan.dapaointerview.base.BaseFragment;
-import com.yifan.dapaointerview.databinding.FragmentJavaBinding;
 import com.yifan.dapaointerview.databinding.FragmentListBinding;
+import com.yifan.dapaointerview.module.home.fragment.android.IvAndroidFragment;
+import com.yifan.dapaointerview.module.home.fragment.java.IvJavaFragment;
 import com.yifan.dapaointerview.module.home.viewmodel.IvViewModel;
-import com.yifan.dapaointerview.module.main.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * @Description:
@@ -85,12 +84,13 @@ public class IvFragment extends BaseFragment<FragmentListBinding, IvViewModel> {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+
         // 注册页面变化的回调接口
         mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                mTabLayout.setScrollPosition(position, 0, false);
+                mTabLayout.setScrollPosition(position, 0, true);    //true表示文字选中切换
             }
         });
     }

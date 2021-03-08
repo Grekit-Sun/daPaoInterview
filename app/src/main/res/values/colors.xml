@@ -54,4 +54,6 @@
     <color name="app_color_theme_8">#AC8FEF</color> <!-- Lavender -->
     <color name="app_color_theme_9">#EE85C1</color> <!-- Pink Rose -->
 
+    <color name="color_text">#9E9E9E</color>
+
 </resources>

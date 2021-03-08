@@ -1,14 +1,11 @@
-package com.yifan.dapaointerview.module.home.fragment;
+package com.yifan.dapaointerview.module.home.fragment.java;
 
 import androidx.lifecycle.ViewModelProvider;
 
 import com.yifan.dapaointerview.R;
 import com.yifan.dapaointerview.base.BaseFragment;
 import com.yifan.dapaointerview.databinding.FragmentJavaBinding;
-import com.yifan.dapaointerview.databinding.FragmentListBinding;
-import com.yifan.dapaointerview.module.home.viewmodel.IvJavaViewModel;
-import com.yifan.dapaointerview.module.home.viewmodel.IvViewModel;
-import com.yifan.dapaointerview.module.main.viewmodel.MainViewModel;
+import com.yifan.dapaointerview.module.home.viewmodel.javaviewmodel.IvJavaViewModel;
 
 /**
  * @Description:

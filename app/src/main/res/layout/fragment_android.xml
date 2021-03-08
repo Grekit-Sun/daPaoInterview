@@ -6,7 +6,7 @@
 
         <variable
             name="IvAndroidModel"
-            type="com.yifan.dapaointerview.module.home.viewmodel.IvAndroidViewModel" />
+            type="com.yifan.dapaointerview.module.home.viewmodel.androidviewmodel.IvAndroidViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
