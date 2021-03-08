@@ -26,4 +26,16 @@
     <string name="fresh">新</string>
     <string name="top">置顶</string>
 
+    <string name="java">Java</string>
+    <string name="android">Android</string>
+    <string name="algorithm">算法</string>
+    <string name="os">操作系统</string>
+    <string name="net">网络</string>
+    <string name="database">数据库</string>
+    <string name="system_design">系统设计</string>
+    <string name="oop">面向对象</string>
+    <string name="tool">工具</string>
+    <string name="coding_practice">编码实践</string>
+
+
 </resources>

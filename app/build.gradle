@@ -103,4 +103,6 @@ dependencies {
     // AndPermission
     implementation "com.yanzhenjie:permission:${project.ANDPERMISSION_VERSION_CODE}"
 
+    implementation "androidx.viewpager2:viewpager2:1.0.0-alpha02"
+
 }
