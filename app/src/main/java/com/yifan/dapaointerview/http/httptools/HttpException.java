@@ -1,4 +1,4 @@
-package com.yifan.dapaointerview.util;
+package com.yifan.dapaointerview.http.httptools;
 
 import android.text.TextUtils;
 

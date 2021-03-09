@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.multidex.MultiDexApplication;
 
 import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
 import com.guoxiaoxing.phoenix.picker.Phoenix;
 import com.orhanobut.hawk.Hawk;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
@@ -20,7 +19,7 @@ import com.yifan.dapaointerview.R;
 import com.yifan.dapaointerview.http.data.HttpBaseResponse;
 import com.yifan.dapaointerview.http.request.HttpFactory;
 import com.yifan.dapaointerview.http.request.ServerAddress;
-import com.yifan.dapaointerview.util.HttpException;
+import com.yifan.dapaointerview.http.httptools.HttpException;
 
 /**
  * @Description:

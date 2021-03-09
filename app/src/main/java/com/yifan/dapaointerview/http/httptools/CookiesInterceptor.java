@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.orhanobut.hawk.Hawk;
 import com.yifan.dapaointerview.config.Constants;
-import com.yifan.dapaointerview.util.HttpException;
 import com.yifan.dapaointerview.util.NetworkUtils;
 
 import java.io.IOException;

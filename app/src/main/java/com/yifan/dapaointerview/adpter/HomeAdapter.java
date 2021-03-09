@@ -1,11 +1,17 @@
 package com.yifan.dapaointerview.adpter;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yifan.dapaointerview.R;
+import com.yifan.dapaointerview.bean.KnowledgeBean;
 
 import java.util.List;
 
@@ -19,23 +25,24 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
     /**
      * 数据源
      */
-    private List mList;
+    private List<KnowledgeBean> mList;
 
-    HomeAdapter(List list) {
+    HomeAdapter(List<KnowledgeBean> list) {
         mList = list;
     }
 
     /**
      * 创建ViewHolder并返回，后续item布局里控件都是从ViewHolder中取出
      *
-     * @param parent
+     * @param viewGroup
      * @param viewType
      * @return
      */
     @NonNull
     @Override
-    public HomeAdapter.MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public HomeAdapter.MyHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+        ViewDataBinding dataBinding = DataBindingUtil.inflate(LayoutInflater.from(viewGroup.getContext()), viewType, viewGroup, false);
+        return new MyHolder(dataBinding);
     }
 
     @Override
@@ -45,6 +52,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
 
     @Override
     public int getItemCount() {
+        return mList != null ? mList.size() : 0;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+//        return getItemLayout();
         return 0;
     }
 
@@ -53,15 +66,15 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
      */
     class MyHolder extends RecyclerView.ViewHolder {
 
-        TextView textView;
+        ViewDataBinding binding;
 
-        public MyHolder(View itemView) {
-            super(itemView);
-            textView = itemView.findViewById(R.id.tv_content);
+        public MyHolder(ViewDataBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 
-    public int getItemLayout(){
-
-    }
+//    public int getItemLayout(){
+////        return R.layout.item_knowledge;
+//    }
 }

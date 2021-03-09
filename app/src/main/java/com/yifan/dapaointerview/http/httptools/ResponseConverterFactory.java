@@ -4,7 +4,6 @@ import android.text.TextUtils;
 
 import com.google.gson.Gson;
 import com.yifan.dapaointerview.http.request.HttpFactory;
-import com.yifan.dapaointerview.util.HttpException;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
