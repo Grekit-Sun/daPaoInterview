@@ -35,6 +35,7 @@ public class IvJavaFragment extends BaseFragment<FragmentJavaBinding, IvJavaView
 
     @Override
     protected void init() {
+        mViewModel.loadJavaData();
         initRecycle();
     }
 
