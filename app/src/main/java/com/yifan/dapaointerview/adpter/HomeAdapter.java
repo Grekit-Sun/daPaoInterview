@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.databinding.library.baseAdapters.BR;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yifan.dapaointerview.R;
@@ -27,7 +28,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
      */
     private List<KnowledgeBean> mList;
 
-    HomeAdapter(List<KnowledgeBean> list) {
+    public HomeAdapter(List<KnowledgeBean> list) {
         mList = list;
     }
 
@@ -47,7 +48,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull HomeAdapter.MyHolder holder, int position) {
-
+        KnowledgeBean bean = mList.get(position);
+        //绑定数据
+        holder.binding.setVariable(BR.knowledgeBean, bean);
+        //防止数据闪烁
+        holder.binding.executePendingBindings();
     }
 
     @Override
@@ -57,8 +62,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
 
     @Override
     public int getItemViewType(int position) {
-//        return getItemLayout();
-        return 0;
+        return getItemLayout();
     }
 
     /**
@@ -74,7 +78,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyHolder> {
         }
     }
 
-//    public int getItemLayout(){
-////        return R.layout.item_knowledge;
-//    }
+    public int getItemLayout() {
+        return R.layout.item_knowledge;
+    }
 }
