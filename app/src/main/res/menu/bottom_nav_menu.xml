@@ -8,9 +8,9 @@
         android:title="@string/menu_home" />
 
     <item
-        android:id="@+id/nav_video"
+        android:id="@+id/nav_fs_space"
         android:icon="@drawable/video"
-        android:title="@string/menu_video" />
+        android:title="@string/menu_fun_space" />
 
     <item
         android:id="@+id/nav_collect"

@@ -17,6 +17,7 @@
 
     <!--  NAV string  -->
     <string name="menu_home">主页</string>
+    <string name="menu_fun_space">趣味空间</string>
     <string name="menu_video">短视频</string>
     <string name="menu_collect">收藏</string>
     <string name="menu_square">广场</string>
@@ -36,6 +37,9 @@
     <string name="oop">面向对象</string>
     <string name="tool">工具</string>
     <string name="coding_practice">编码实践</string>
+
+    <!--趣味接口-->
+    <string name="fs_mask_identity">人脸口罩识别</string>
 
 
 </resources>

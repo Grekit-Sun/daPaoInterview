@@ -11,11 +11,11 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_list" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_collect"-->
-<!--        android:name="com.example.myapplication.ui.nav.collect.CollectFragment"-->
-<!--        android:label="@string/collect"-->
-<!--        tools:layout="@layout/fragment_list" />-->
+    <fragment
+        android:id="@+id/nav_fs_space"
+        android:name="com.yifan.dapaointerview.module.funspace.FsFragment"
+        android:label="@string/menu_fun_space"
+        tools:layout="@layout/fragment_funspace" />
 
 
 <!--    <fragment-->
