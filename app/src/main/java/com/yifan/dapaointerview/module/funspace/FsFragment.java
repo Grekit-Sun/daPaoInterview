@@ -55,5 +55,6 @@ public class FsFragment extends BaseFragment<FragmentFunspaceBinding, FsViewMode
                 .addToBackStack(null)
                 .commit();
         mMaskedLayout.setVisibility(View.VISIBLE);
+        mBtnMaskIdentify.setVisibility(View.GONE);
     }
 }

@@ -7,7 +7,7 @@ package com.yifan.dapaointerview.constant;
  */
 public final class Constants {
 
-    public static final class News {
+    public static final class FunSpace {
         public static final String APP_KEY = "aac74fd8d788b0adf58cb557b8f5c721";
     }
 
