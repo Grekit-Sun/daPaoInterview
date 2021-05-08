@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.*;
 
 /**
  * @Description:
@@ -186,5 +188,88 @@ public class Main {
             }
         }
         return false;
+    }
+
+    /**
+     * 冒泡排序
+     */
+    public int[] sort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+    /**
+     * quick sort
+     *
+     * @param arr
+     * @param start
+     * @param end
+     */
+    public void quickSort(int[] arr, int start, int end) {
+        if (start >= end) return;
+        int standard = arr[start];
+        int i = start;
+        int j = end;
+        while (i < j) {
+            while (i < j && arr[j] > standard) {
+                j--;
+            }
+            while (i < j && arr[i] <= standard) {
+                i++;
+            }
+            swap(arr, i, j);
+        }
+        swap(arr, i, start);
+
+        quickSort(arr, start, i - 1);
+        quickSort(arr, i + 1, end);
+    }
+
+    private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    /**
+     * 最长无重复字串
+     *
+     * @param arr
+     * @return
+     */
+    public int maxLength_1(int[] arr) {
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (!((Integer) arr[i]).equals((Integer) arr[j])) {
+                    set.add(arr[i]);
+                }
+            }
+        }
+        return set.size();
+    }
+
+    public int maxLength(int[] arr) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int a : arr){
+            if(!map.containsKey(a)){
+                map.put(a,1);
+            }
+        }
+        return map.size();
+    }
+
+    public static void main(String[] args) {
+        Main main = new Main();
+        int[] arr = {1,2,3,1,2,1,2};
+        System.out.println(main.maxLength(arr) + "");
     }
 }
