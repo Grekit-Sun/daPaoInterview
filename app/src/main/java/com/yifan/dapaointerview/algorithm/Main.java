@@ -241,6 +241,7 @@ public class Main {
 
     /**
      * 最长无重复字串
+     *
      * @param arr
      * @return
      */
@@ -262,4 +263,20 @@ public class Main {
         int[] arr = {1, 2, 3, 1, 2, 1, 2};
         System.out.println(main.maxLength(arr) + "");
     }
+
+    private ListNode reserveListNode(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode next = null;
+        ListNode pre = null;
+        while (head != null) {
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
+        }
+        return pre;
+    }
+
 }
