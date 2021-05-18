@@ -241,35 +241,25 @@ public class Main {
 
     /**
      * 最长无重复字串
-     *
      * @param arr
      * @return
      */
-    public int maxLength_1(int[] arr) {
-        Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (!((Integer) arr[i]).equals((Integer) arr[j])) {
-                    set.add(arr[i]);
-                }
-            }
-        }
-        return set.size();
-    }
-
     public int maxLength(int[] arr) {
         HashMap<Integer, Integer> map = new HashMap<>();
-        for(int a : arr){
-            if(!map.containsKey(a)){
-                map.put(a,1);
+        int max = 1;
+        for (int start = 0, end = 0; end < arr.length; end++) {
+            if (map.containsKey(arr[end])) {
+                start = Math.max(start, map.get(arr[end]) + 1);
             }
+            max = Math.max(max, end - start + 1);
+            map.put(arr[end], end);
         }
-        return map.size();
+        return max;
     }
 
     public static void main(String[] args) {
         Main main = new Main();
-        int[] arr = {1,2,3,1,2,1,2};
+        int[] arr = {1, 2, 3, 1, 2, 1, 2};
         System.out.println(main.maxLength(arr) + "");
     }
 }
